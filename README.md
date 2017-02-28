@@ -1,5 +1,6 @@
 
 # Hands-on with Rancher
+
 ## Overview
 
 "Rancher is an open source project that provides a complete platform for
@@ -9,17 +10,26 @@ operating Docker in production" (github official page). It allow us:
 - Container level orchestration and scheduling.
 - Multi-host networking (IPSEC network overlay)
 
+We will explore some of Rancher's feature in the DevOps Playground
+
 ## Requirements
 
-- Some Linux distribution (Debian, Ubuntu, CentOS, etc)
-- [Docker version supported by rancher ](http://docs.rancher.com/rancher/v1.3/en/hosts/#supported-docker-versions): ```curl https://releases.rancher.com/install-docker/1.12.sh | sh```
-- +1GB of RAM
+- A linux machine  -> you'll be provided with an AWS instance to ssh in.
 
-## Architecture we are going to set up
+- [Docker version supported by rancher ](http://docs.rancher.com/rancher/v1.3/en/hosts/#supported-docker-versions): ```curl https://releases.rancher.com/install-docker/1.12.sh | sh```
+
+- +1GB of RAM -> not a problem here, since we are using AWS
+
+## The Plan
+
+The plan for this usecase is for all the machines to work together as descibed below : 
 
 ![Architecture](images/forest-rancher-meetup.png)
 
-## Step 0: Deploying the server (only Alejandro is going to do it)
+The Rancher server setup will be performed by the Presenter (Alejandro)
+All the attendees will register their own Rancher host against the Rancher Server, create their stack and setup a load balancer.
+
+## Step 0: Deploying the Rancher server [Presenter only]
 
 Because To deploy the rancher server we only need to run:
 
