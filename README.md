@@ -1,5 +1,5 @@
 
-# Hands-on with Rancher ! / Introduction to Rancher ?
+# Hands-on with Rancher
 ## Overview
 
 "Rancher is an open source project that provides a complete platform for
@@ -19,7 +19,7 @@ operating Docker in production" (github official page). It allow us:
 
 ![Architecture](images/forest-rancher-meetup.png)
 
-## Step -1: Deploying the server (only Alejandro is going to do it)
+## Step 0: Deploying the server (only Alejandro is going to do it)
 
 Because To deploy the rancher server we only need to run:
 
@@ -63,6 +63,15 @@ We are going to create our first stack:
 1. Go to Infrastructure -> Hosts and look for your container in the environment hosts.
 2. Click in Options (three dots) and see the logs: ![creating-container](images/going-to-shell.png)
 3. Now select "Execute a Shell" to login inside your container
+
+## Step 5: Create a Load Balancer on the top of your stack
+
+Once you have your stack up and running we are going to put a LB on the top of it, so you can scale
+the application container and it is transparent for the LB. In order to achieve that we need to:
+
+1. Go to our stack and "Add Load Balancer" ![add-lb](images/add-lb-01.png)
+2. Write a name and description for LB and select the port and target: ![add-lb](images/add-lb-02.png)
+**NOTE**: The target port should be the same the one is exposing the application
 
 ## To Go Further - Step 5: Assign labels to your agent and define constraints
 to your stack
